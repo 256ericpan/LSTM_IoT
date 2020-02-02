@@ -1,5 +1,7 @@
 # LSTM for live IoT data prediction
 
+ver 0.1.0
+
 ## Introduction
 LSTM_IoT is an project using machine learning (LSTM) to predict over live IoT sensor data 
 
