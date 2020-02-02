@@ -9,8 +9,7 @@ For the rest of us, monitor some parameter (temperature, sound, humidity, lightn
 
 The project is largely inspired and based on depending on https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction and http://wiki.seeedstudio.com/Grove_Beginner_Kit_for_Arduino/ 
 
-![Cover pic]
-
+![anim_sound3.gif](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/anim_sound3.gif)
 
 ## requirement
 
@@ -31,12 +30,15 @@ Install requirements.txt file to make sure correct versions of libraries are bei
 * an Arduino compatible board like Seeeduino
 * some Grove sensors http://wiki.seeedstudio.com/Sensor/ 
 
+![20200202213147.png](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/20200202213147.png)
+
 ## installation
 
 ### Arduino
 select right serial port, remember the **port number**(like COM7) to change host settings later. 
 change 
-![Cover pic]
+
+![20200202212706.png](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/20200202212706.png)
 
 select the right pin target sensor is using. For grove modules, find the first silkscreen near connected Grove connctor.
 ```c
@@ -69,9 +71,17 @@ Yes, run.py will
 Watch how prediction evolves over time. 
 Try change the sensing objects and see how the LSTM neuron network adapt the new trend. 
 
-### some results 
-Light
-Sound
+## some results 
+### Light
+Sensing with [Grove Light sensor](http://wiki.seeedstudio.com/Grove-Light_Sensor/): change the lightness around sensor to see the live data change. Prediction can't forecast sudden human interfernece (yet), but will catch up and predict following stablized situations. 
+
+![anim_sound3.gif](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/anim_sound3.gif)
+
+
+### Sound
+Sensing with [Grove Sound sensor](http://wiki.seeedstudio.com/Grove-Sound_Sensor/): since raw loudness is more verstile without obivous patterns, LSTM is predicting the baseline increase as moving closer to speaker and ignored the peaks. 
+
+![sound_start.png](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/sound_start.png)
 
 ## To do :
 ### detect abnormity 
@@ -80,4 +90,16 @@ Sound
 ### User multiple sensor and buttons to lable data 
 ### Deploy on edge computing 
 
+## Thanks
+to Jakob Aungiers, Altum Intelligence ltd 
+https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction
+
+With his code, An initial offline testing (as below) was done with actual stored sensor data was quick convincing, thus I'm confident in accomplish this project.
+
+![Figure_sound.png](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/Figure_sound.png)
+
 ## More about LSTM
+![20200202203217.png](https://raw.githubusercontent.com/256ericpan/img.bed/master/image/20200202203217.png) 
+https://pathmind.com/wiki/lstm
+
+

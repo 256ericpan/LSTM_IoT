@@ -8,7 +8,7 @@ A3 = magnet
 
 
 */
-int sensorPin = A0;  // The potentiometer on pin 0                  
+int sensorPin = A2;  // The potentiometer on pin 0                  
 int ledPin = 13;     // The LED is connected on pin 13
 int sensorValue;     // variable to stores data
 

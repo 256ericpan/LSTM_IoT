@@ -64,17 +64,18 @@ def main():
             sensor_data.append(live_data[i])
             i+=1    
         sensor_struct_data = live_data[np.newaxis,:,np.newaxis] #contruct live data for LSTM
-        plot_results(predictions_data[-150:],sensor_data[-100:])
+        predictions= model.predict_sequence_live(sensor_struct_data, configs['data']['sequence_length']) #Shift the window by 1 new prediction each time, re-run predictions on new window
+        predictions_data.append(predictions)
+
+        plot_results(predictions_data[-120:],sensor_data[-100:])
         plt.show()
         plt.pause(0.1) #critical to display continous img
 
         #predict every 10 seq_len
-        if len(sensor_data) > 5 * seq_len[0]:
-            predictions= model.predict_sequence_live(sensor_struct_data, configs['data']['sequence_length']) #Shift the window by 1 new prediction each time, re-run predictions on new window
-            predictions_data.append(predictions)
+        #if len(sensor_data) > 1 * seq_len[0]:
 
         #train every 100 seq_len
-        if len(sensor_data) >30 * seq_len[0]:
+        if len(sensor_data) >10 * seq_len[0]:
             np.savetxt('data\sensor.csv', sensor_data, delimiter = ',', header='sensor_value')
 
         #load data for training
