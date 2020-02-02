@@ -73,11 +73,11 @@ Try change the sensing objects and see how the LSTM neuron network adapt the new
 Light
 Sound
 
-## Next:
+## To do :
 ### detect abnormity 
 ### More static data like temperature
 ### Tune the LSTM neuron network
 ### User multiple sensor and buttons to lable data 
-### Deploy on edge computing
+### Deploy on edge computing 
 
 ## More about LSTM
